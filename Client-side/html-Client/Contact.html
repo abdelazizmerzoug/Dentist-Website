@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Book an appointment with our dental clinic experts.">
+    <title>About Us - Dentist</title>
+    <link rel="stylesheet" href="../css-Client/Contact.css">
+    <link rel="icon" href="../images/dentistry.png" type="image/x-icon">    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 1rem;
+            display: none;
+            z-index: 1000;
+            max-width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .success {
+            background-color: #4caf50;
+            color: white;
+        }
+        .error {
+            background-color: #f44336;
+            color: white;
+        }
+    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="notification" class="notification"></div>
+
+    <header>
+        <nav class="navbar" aria-label="Main navigation">
+            <a href="home.html" class="logo">
+                <img src="../images/header-logo.png" alt="Dental Clinic Logo">
+                <span>Smile Haven</span>
+            </a>
+            <button class="menu-icon" aria-label="Toggle menu" aria-expanded="false" onclick="toggleMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <ul id="menuList" class="menu-list">
+                <li><a href="home.html">Home</a></li>
+                <li><a  href="about-2.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a class="active" href="Contact.html">Contact</a></li>
+                <li><a href="./login.html" class="btn-login"><img src="../images/logout.png" style="width: 20px; height: 20px;" alt=""></a></li>
+
+                </ul>
+        </nav>
+    </header>
+
+        <main>
+            <section class="about">
+                <h2>Contact</h2>
+                <nav aria-label="breadcrumb">
+                    <ol>
+                        <li><a href="index.html">Home</a></li>
+                        <li>&gt;</li>
+                        <li><a href="Contact.html">Contact</a></li>
+                    </ol>
+                </nav>
+            </section>
+
+
+        <section class="booking">
+            <div class="container">
+                <div class="form-container">
+                    <form id="appointmentForm">
+                        <fieldset>
+                            <legend>Book an Appointment</legend>
+                            <!-- Name Section -->
+                            <div class="form-group">
+                                <div class="input-field">
+                                    <label for="first-name">First Name *</label>
+                                    <input type="text" id="first-name" name="first_name" required>
+                                </div>
+                                <div class="input-field">
+                                    <label for="last-name">Last Name *</label>
+                                    <input type="text" id="last-name" name="last_name" required>
+                                </div>
+                            </div>
+                            <!-- Birth Date -->
+                            <div class="input-field">
+                                <label for="birth-date">Birth Date</label>
+                                <input type="date" id="birth-date" name="birth_date">
+                            </div>
+                            <!-- Contact Information -->
+                            <div class="form-group">
+                                <div class="input-field">
+                                    <label for="phone">Phone Number *</label>
+                                    <input type="tel" id="phone" name="phone" pattern="\+213[0-9]{9}" required>
+                                </div>
+                                <div class="input-field">
+                                    <label for="email">Email Address *</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                            </div>
+                            <!-- Add this inside the form -->
+                            <div class="input-field">
+                                <label for="reason">Reason for Appointment *</label>
+                                <textarea id="reason" name="reason" rows="4" placeholder="Enter the reason for your appointment..." required></textarea>
+                            </div>
+
+                            <!-- Choose Doctor -->
+                            <div class="input-field">
+                                <label for="doctor">Choose Doctor *</label>
+                                <select id="doctor" name="doctor" required>
+                                    <option value="" disabled>Select a Dr</option>
+                                    <option value="1">Dr. Abdelaziz Merzoug</option>
+                                    <option value="2">Dr. Lina Daghbouche</option>
+                                    <option value="3">Dr. Aya Mezaine</option>
+                                </select>
+                            </div>
+                            <!-- Appointment Date -->
+                            <div class="input-field">
+                                <label for="appointment-date">Appointment Date *</label>
+                                <input type="date" id="appointment-date" name="appointment_date" required>
+                            </div>
+                            <!-- Appointment Slot -->
+                            <div class="input-field">
+                                <label for="appointment-slot">Time Slot *</label>
+                                <select id="appointment-slot" name="appointment_slot" required>
+                                    <option value="" disabled>Select a Time Slot</option>
+                                </select>
+                            </div>
+                            <!-- Buttons -->
+                            <div class="submit-buttons">
+                                <button type="submit" class="btn-primary">Book Now</button>
+                                <button type="reset" class="btn-secondary">Reset</button>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+
+
+            <div class="side">
+                <address style="font-style: normal; margin-bottom: 1em; font-size: 1.1em;">
+                    <p style="margin: 0;">
+                        <i class="fa-solid fa-location-dot" style="color: #2e6f85; margin-right: 0.5em;"></i>
+                        2nd Avenue, Saskatoon, Blida<br>Saskatchewan, Alg
+                    </p>
+                </address>
+                
+
+                <div class="map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12814.542680897206!2d2.4211844801902753!3d36.586996552161054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1285810c0efe66c5%3A0xc7a13285c9583d2e!2sCabinet%20dentaire%20Dr%20Hachouf!5e0!3m2!1sen!2sdz!4v1731434268070!5m2!1sen!2sdz"
+                        width="100%"
+                        height="250"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                    <noscript>Your browser does not support JavaScript. Map functionality may not work as expected.</noscript>
+                </div>
+
+                <div class="contact-info" style="font-size: 1.1em; color: #555;">
+                    <p style="margin: 0.5em 0;">
+                        <i class="fa-solid fa-envelope" style="color: #1a344a; margin-right: 0.5em;"></i>
+                        Email: <a href="mailto:DentalFamily@gmail.com" style="color: #2e6f85; text-decoration: none;">DentalFamily@gmail.com</a>
+                    </p>
+                    <p style="margin: 0.5em 0;">
+                        <i class="fa-solid fa-phone" style="color: #1a344a; margin-right: 0.5em;"></i>
+                        Phone: <a href="tel:+213665352397" style="color: #2e6f85; text-decoration: none;">+213665352397</a>
+                    </p>
+                </div>
+
+                <img src="../images/Deltistfront.png" alt="Dental Clinic Front" class="clinic-image">
+            </div>
+,
+        </section>
+    </main>
+        <!-- Footer -->
+<footer>
+    <!-- Useful Links Section -->
+    <div class="footer-links">
+        <h3>Useful Links</h3>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="signup.html">Sign Up</a></li>
+            <li><a href="appointment.html">Book an Appointment</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </div>
+
+    <!-- Schedule Section -->
+    <div class="schedule">
+        <h3>Time Schedule</h3>
+        <ul>
+            <li>Sunday: 9:00 am - 6:00 pm</li>
+            <li>Monday: 9:00 am - 6:00 pm</li>
+            <li>Tuesday: Closed</li>
+            <li>Wednesday: 9:00 am - 6:00 pm</li>
+            <li>Thursday: 9:00 am - 1:00 pm</li>
+            <li>Friday: Closed</li>
+        </ul>
+    </div>
+
+    <!-- Contact Information Section -->
+    <div class="contact-info">
+        <h3>Contact Us</h3>
+        <p>2nd Avenue, Saskatoon, Blida, Algeria</p>
+        <p><a href="tel:+213561669880">Phone: +213-561-669-880</a></p>
+        <p><a href="mailto:merzougaziz800@gmail.com">Email: merzougaziz800@gmail.com</a></p>
+    </div>
+
+    <!-- Social Media Links -->
+    <div class="social-media">
+        <h3>Follow Us</h3>
+        <ul>
+            <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+            <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+            <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        </ul>
+    </div>
+   <!-- Copyright Section -->
+    <div class="copyright">
+        <p>&copy; 2024 Dental Clinic. All Rights Reserved.</p>
+    </div>
+</footer>
+<script>
+    const appointmentDate = document.getElementById('appointment-date');
+    const doctor = document.getElementById('doctor');
+    const slotSelect = document.getElementById('appointment-slot');
+    const notification = document.getElementById('notification');
+    const form = document.getElementById('appointmentForm');
+
+    // Set minimum date to today
+    const today = new Date().toISOString().split("T")[0];
+    appointmentDate.setAttribute("min", today);
+
+    // Fetch available slots when date or doctor changes
+    appointmentDate.addEventListener('change', fetchAvailableSlots);
+    doctor.addEventListener('change', fetchAvailableSlots);
+
+    async function fetchAvailableSlots() {
+        if (!appointmentDate.value || !doctor.value) return;
+
+        console.log("Fetching slots for Doctor ID:", doctor.value, "Date:", appointmentDate.value);
+
+        try {
+            const response = await fetch('../php-Client/fetch_slots.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    doctor_id: doctor.value,
+                    date: appointmentDate.value
+                })
+            });
+
+            const data = await response.json();
+            console.log("Slots data received:", data);
+
+            slotSelect.innerHTML = '<option value="" disabled selected>Select a Time Slot</option>';
+            if (data.status === 'success' && data.slots.length > 0) {
+                data.slots.forEach(slot => {
+                    const option = document.createElement('option');
+                    option.value = slot;
+                    option.textContent = slot;
+                    slotSelect.appendChild(option);
+                });
+            } else {
+                const option = document.createElement('option');
+                option.textContent = 'No available slots';
+                option.value = "";
+                option.disabled = true;
+                slotSelect.appendChild(option);
+            }
+        } catch (error) {
+            console.error("Error fetching slots:", error);
+        }
+    }
+
+    // Handle form submission
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+        console.log("Form data being sent:", Object.fromEntries(formData));
+
+        try {
+            const response = await fetch('../php-Client/book_appointment.php', {
+                method: 'POST',
+                body: formData,
+            });
+
+            const result = await response.json();
+            console.log("Booking response received:", result);
+
+            notification.textContent = result.message;
+            notification.className = `notification ${result.status} fade-out`;
+            notification.style.display = 'block';
+
+            setTimeout(() => {
+                notification.style.display = 'none';
+                notification.className = 'notification';
+            }, 5000);
+
+            if (result.status === 'success') form.reset();
+        } catch (error) {
+            console.error("Error:", error);
+            notification.textContent = "Something went wrong. Please try again.";
+            notification.className = "notification error fade-out";
+            notification.style.display = 'block';
+        }
+    });
+</script>
+
+
+
+</body>
+</html>
