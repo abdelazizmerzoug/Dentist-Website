@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Slab:wght@100..900&display=swap');
+/* General Reset and Global Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background-image: url(../images/backnega.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  color: #333;
+  line-height: 1.6;
+  font-size: 16px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Header Styles */
+header {
+  width: 100%;
+  padding: 0 20px;
+  background: linear-gradient(20deg, #1a344a, #2e6f85, #9ccce2);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  height: 80px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.7rem;
+  font-weight: bold;
+  gap: 10px;
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+}
+.logo span{
+  text-shadow: 0 4px 5px #09386b;
+  font-family: "Playfair Display", serif;
+}
+.menu-icon {
+  display: none;
+  font-size: 1.7rem;
+  color: #fff;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.menu-list {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.menu-list li {
+  list-style: none;
+}
+
+.menu-list a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 10px 15px;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.menu-list a:hover,
+.menu-list a.active {
+  color: #fff;
+  font-weight: bold;
+  border-bottom: 2px solid #fff;
+}
+
+/* Main Section Styling */
+.auth-section {
+  margin-top: 120px;
+  width:480px;
+  background: #f5f5f5;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  align-self: center;
+  background: linear-gradient(20deg, #9ccce2, #2e6f85, #9ccce2, #2e6f85);
+}
+
+.form-container {
+  transition: all 0.5s ease;
+}
+
+.form-container.hidden {
+  display: none;
+}
+
+.form-title {
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #1a344a;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.input-group {
+  position: relative;
+  width: 100%;
+}
+
+.input-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px 10px 10px 40px;
+  font-size: 1em;
+  border-radius: 30px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus {
+  border-color: #1a344a;
+  box-shadow: 0 0 5px rgba(26, 52, 74, 0.5);
+}
+
+.forgot-link {
+  display: inline-block;
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: #1a344a;
+  transition: color 0.3s;
+}
+
+.forgot-link:hover {
+  color: #0056b3;
+}
+
+.form-button {
+  width: 100%;
+  padding: 12px;
+  background: #1a344a;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.form-button:hover {
+  background: #2e6f85;
+}
+
+.form-text {
+  text-align: center;
+  margin-top: 20px;
+  color: #666;
+}
+
+.toggle-link {
+  color: #1a344a;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.toggle-link:hover {
+  color: #0056b3;
+}
+
+/* Responsive Menu */
+@media (max-width: 768px) {
+  .menu-icon {
+      display: block;
+  }
+
+  .menu-list {
+      position: absolute;
+      top: 80px;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      background: linear-gradient(20deg, #1a344a, #2e6f85, #9ccce2);
+      display: none;
+  }
+
+  .menu-list li {
+      text-align: center;
+      padding: 15px 0;
+  }
+}
+
+/* Extra Styling */
+.auth-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(135deg, rgba(26, 52, 74, 0.1), transparent);
+  transform: rotate(25deg);
+  z-index: -1;
+}
+
+.auth-container {
+  position: relative;
+}
+
+/* Button Focus State */
+.form-button:focus {
+  outline: 2px solid #0056b3;
+  outline-offset: 2px;
+}
+
+/* Smooth Transitions */
+button, a, input {
+  transition: all 0.3s ease;
+}  

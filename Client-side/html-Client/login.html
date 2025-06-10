@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/header-logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css-Client/login.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet">
+    <title>Smile Haven | Login & Signup</title>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav class="navbar" aria-label="Main navigation">
+            <a href="home.html" class="logo">
+                <img src="../images/header-logo.png" alt="Smile Haven Logo">
+                <span>Smile Haven</span>
+            </a>
+            <button class="menu-icon" aria-label="Toggle menu" onclick="toggleMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <ul id="menuList" class="menu-list">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="./login.html" class="active">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Section -->
+    <main>
+        <section class="auth-section">
+            <div class="auth-container">
+                <!-- Form Container -->
+                <div id="login-container" class="form-container">
+                    <h1 class="form-title">Sign In</h1>
+                    <form action="../php-Client/login.php" method="post" class="auth-form">
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <div class="input-group">
+                                <i class="bx bx-at input-icon"></i>
+                                <input type="email" id="email" name="Email" placeholder="Enter your email" class="form-input" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="form-label">Password</label>
+                            <div class="input-group">
+                                <i class="bx bx-lock-alt input-icon"></i>
+                                <input type="password" id="password" name="Password" placeholder="Enter your password" class="form-input" required>
+                            </div>
+                        </div>
+                        <a href="#" class="forgot-link">Forgot password?</a>
+                        <button type="submit" class="form-button">Sign In</button>
+                        <p class="form-text">Don't have an account? <a href="#signup-container" class="toggle-link" onclick="toggleForm()">Sign Up</a></p>
+                    </form>
+                </div>
+
+                <div id="signup-container" class="form-container hidden">
+                    <h1 class="form-title">Create Account</h1>
+                    <form action="../php-Client/signup.php" method="post" class="auth-form">
+                        <div class="form-group">
+                            <label for="username" class="form-label">Username</label>
+                            <div class="input-group">
+                                <i class="bx bx-user input-icon"></i>
+                                <input type="text" id="username" name="Username" placeholder="Choose a username" class="form-input" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="signup-email" class="form-label">Email</label>
+                            <div class="input-group">
+                                <i class="bx bx-at input-icon"></i>
+                                <input type="email" id="signup-email" name="Email" placeholder="Enter your email" class="form-input" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="signup-password" class="form-label">Password</label>
+                            <div class="input-group">
+                                <i class="bx bx-lock-alt input-icon"></i>
+                                <input type="password" id="signup-password" name="Password" placeholder="Choose a password" class="form-input" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="form-button">Sign Up</button>
+                        <p class="form-text">Already have an account? <a href="#login-container" class="toggle-link" onclick="toggleForm()">Sign In</a></p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="../js-Client/Client_header.js"></script>
+    <script>
+        function toggleForm() {
+            document.getElementById('login-container').classList.toggle('hidden');
+            document.getElementById('signup-container').classList.toggle('hidden');
+        }
+
+        function toggleMenu() {
+            const menu = document.getElementById('menuList');
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>
